@@ -2,7 +2,7 @@ FROM debian:testing
 
 MAINTAINER Camille Perin <camille.perin@protonmail.com>
 
-RUN apt-get update &&  apt-get -y install apt-utils
+RUN apt-get update && apt-get -y install apt-utils
 RUN apt-get update && apt-get -y install binutils gcc make m4 git cmake g++ wget lzip jam
 
 WORKDIR /app
