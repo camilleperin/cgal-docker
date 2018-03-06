@@ -1,6 +1,8 @@
-FROM debian:testing
+ARG DISTRIB=debian
+ARG VERSION=latest
+FROM ${DISTRIB}:${VERSION}
 
-MAINTAINER Camille Perin <camille.perin@protonmail.com>
+LABEL maintainer="camille.perin@protonmail.com"
 
 RUN apt-get update && apt-get -y install apt-utils
 RUN apt-get update && apt-get -y install binutils gcc make m4 git cmake g++ wget lzip jam
