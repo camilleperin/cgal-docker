@@ -1,5 +1,8 @@
 # cgal-docker
 
-Convenient debian testing based build of [CGAL](https://www.cgal.org) with the following configuration:
+A convenient build of [CGAL](https://www.cgal.org) and its three main dependencies:
+* [GMP](https://gmplib.org/)
+* [MPFR](http://www.mpfr.org/)
+* [BOOST Thread](http://www.boost.org/)
 
-Build of CGAL and its main dependencies ( GMP, MPFR and BOOST Thread ) are done and put in /app/INSTALL
+All of that is simply compiled and installed in /app/INSTALL
