@@ -4,16 +4,28 @@ FROM ${DISTRIB}:${VERSION}
 
 LABEL maintainer="camille.perin@protonmail.com"
 
-RUN apt-get update && apt-get -y --no-install-recommends install apt-utils
-RUN apt-get update && apt-get -y --no-install-recommends install binutils gcc make m4 git cmake g++ wget lzip jam
+#RUN apt-get update && apt-get -y --no-install-recommends install apt-utils
+RUN apt-get update \
+    && apt-get install -y --no-install-recommends \
+        binutils \
+        ca-certificates \
+        cmake \
+        g++ \
+        gcc \
+        git \
+        jam \
+        lzip \
+        m4 \
+        make \
+        wget \
+    && rm -rf /var/lib/apt/lists/*
+
 
 WORKDIR /app
 
 ARG INSTALL_PREFIX=/usr/local
 
 RUN mkdir -p $INSTALL_PREFIX
-
-RUN apt-get update && apt-get -y --no-install-recommends install ca-certificates
 
 # Build of GMP library
 RUN wget https://gmplib.org/download/gmp/gmp-6.1.2.tar.lz
